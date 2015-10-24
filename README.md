@@ -1,4 +1,4 @@
-# oracle-secret [![Build status](https://travis-ci.org/fweinb/oracle-secret.svg?branch=master)](https://travis-ci.org/fweinb/oracle-secret)
+# oracle-secret [![Build Status](https://travis-ci.org/FWeinb/oracle-secret.svg?branch=master)](https://travis-ci.org/FWeinb/oracle-secret) [![Coverage Status](https://coveralls.io/repos/FWeinb/oracle-secret/badge.svg?branch=master&service=github)](https://coveralls.io/github/FWeinb/oracle-secret?branch=master)
 
 > Encode/Decode Legend of Zelda Oracle of Ages and Oracle of Seasons secrets.
 
