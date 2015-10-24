@@ -1,0 +1,41 @@
+{
+  "name": "oracle-secret",
+  "version": "1.0.0",
+  "description": "Encode/Decode Legend of Zelda Oracle of Ages and Oracle of Seasons secrets.",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib coverage",
+    "lint": "eslint src test",
+    "test": "mocha --compilers js:babel/register",
+    "test:watch": "npm test -- --watch",
+    "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/_mocha --",
+    "test:upload": "cat coverage/lcov.info | coveralls",
+    "check": "npm run lint && npm run test",
+    "build": "babel src --out-dir lib",
+    "preversion": "npm run clean && npm run check",
+    "version": "npm run build",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "zelda",
+    "oracle",
+    "ages",
+    "seasons",
+    "secret"
+  ],
+  "author": "Fabrice Weinberg <Fabrice@weinberg.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.7.3",
+    "isparta": "^3.1.0",
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.3"
+  },
+  "dependencies": {
+    "is-string": "^1.0.4",
+    "lodash.invert": "^3.0.1"
+  }
+}
