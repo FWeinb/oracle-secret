@@ -23,6 +23,9 @@
     "seasons",
     "secret"
   ],
+  "files":[
+    "lib"
+  ],
   "author": "Fabrice Weinberg <Fabrice@weinberg.me>",
   "license": "MIT",
   "devDependencies": {
