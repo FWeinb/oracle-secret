@@ -6,9 +6,29 @@ const Symbols = [
   '2', '3', '4', '5', '6', '7', '8', '9', '↑', '↓', '←', '→', '@',
 ];
 
+const nameSymbolMap = {
+  'spade' : '♠',
+  'heart': '♥',
+  'diamond': '♦',
+  'club': '♣',
+  'circle': '●',
+  'triangle': '▲',
+  'square': '■',
+  'up': '↑',
+  'down': '↓',
+  'left': '←',
+  'right': '→',
+}
+
+const replacePattern = /\{(.*?)\}/gi
+
 export function decode(secret) {
   secret = secret.replace(/\s+/g, '');
-
+  secret = secret.replace(replacePattern, (fullMatch, match) => {
+    let replace = nameSymbolMap[match];
+    if (replace === undefined) throw new Error(`Placeholder ${match} not known.`);
+    return replace;
+  });
   var data = new Array(secret.length);
 
   for (var i = 0; i < secret.length; i++) {

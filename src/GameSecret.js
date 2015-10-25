@@ -58,12 +58,12 @@ export default class GameSecret {
     // Read Hero name
     var Hero = [ 22, 38, 60, 77, 89 ].reduce((l, r) => {
       return l + String.fromCharCode(decodedSecret.read(r, 8));
-    }, '');
+    }, '').replace(/\u0000/g,'');
 
     // Read Child name
     var Child = [ 30, 46, 68, 97, 106 ].reduce((l, r) => {
       return l + String.fromCharCode(decodedSecret.read(r, 8));
-    }, '');
+    }, '').replace(/\u0000/g,'');
 
     var Animal   = AnimalMap.valueFor(decodedSecret.read(85, 3));
     var Behavior = ChildBehaviorMap.valueFor(decodedSecret.read(54, 4));

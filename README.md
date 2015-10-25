@@ -18,10 +18,10 @@ const secret = GameSecret.load('H~2:@ ←2♦yq GB3●( 6♥?↑6');
 
 console.log(secret.toJSON());
 //{
-//  Hero: 'Link\u0000',
+//  Hero: 'Link',
 //  GameID: 14129,
 //  Game: 'Ages',
-//  Child: 'Pip\u0000\u0000',
+//  Child: 'Pip',
 //  Animal: 'Dimitri',
 //  Behavior: 'BouncyD',
 //  IsLinkedGame: true,

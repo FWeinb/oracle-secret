@@ -3,6 +3,7 @@ import * as SecretParser from '../src/SecretParser';
 
 describe('SecretParser', () => {
   const secretString = 'H~2:@ ←2♦yq GB3●( 6♥?↑6';
+  const secretPlaceholderString = 'H~2:@ {left}2♦yq GB3{circle}( 6{heart}?↑6';
   const secretBytes = [
     4,  37, 51, 36, 63,
     61, 51, 10, 44, 39,
@@ -17,9 +18,21 @@ describe('SecretParser', () => {
         secretBytes
       );
     });
+    it('should work with placeholder', () => {
+      assert.deepEqual(
+        SecretParser.decode(secretPlaceholderString),
+        secretBytes
+      );
+    });
     it('should throw when there is an invalid symbol', () => {
       assert.throws(
         SecretParser.decode.bind(SecretParser, 'ä'),
+        Error
+      )
+    });
+    it('should throw when there is an invalid placeholder', () => {
+      assert.throws(
+        SecretParser.decode.bind(SecretParser, '{green}'),
         Error
       )
     });

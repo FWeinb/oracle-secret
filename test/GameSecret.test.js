@@ -12,10 +12,10 @@ describe('GameSecret', () => {
   ];
 
   const secretJSON = {
-    Hero: 'Link\u0000',
+    Hero: 'Link',
     Game: 'Ages',
     GameID: 14129,
-    Child: 'Pip\u0000\u0000',
+    Child: 'Pip',
     Animal: 'Dimitri',
     Behavior: 'BouncyD',
     IsLinkedGame: true,
